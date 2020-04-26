@@ -3,7 +3,11 @@
 
 class Grad
 {
-
+protected:
+    string ime;
+    string okrug;
+    string drzava;
+    int brojStanovnika;
 };
 
 

@@ -5,6 +5,7 @@ class Hala
 protected:
     string Grad;
     int brojTerena;
+    int kapacitet;
 };
 
 

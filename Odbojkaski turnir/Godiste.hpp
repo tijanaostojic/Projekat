@@ -5,7 +5,7 @@ class Godiste
 {
 protected:
     int godina;
-    kategorija kategodija1;
+    kategorija kategorija1;
 
 };
 
