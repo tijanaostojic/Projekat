@@ -2,6 +2,7 @@
 #define UTAKMICA_HPP_INCLUDED
 #include "TIM.HPP"
 #include "HALA.HPP"
+#include "TEHNICAR.HPP"
 class Utakmica
 {
 protected:
