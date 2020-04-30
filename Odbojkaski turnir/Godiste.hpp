@@ -6,7 +6,11 @@ class Godiste
 protected:
     int godina;
     kategorija kategorija1;
-
+public:
+    Godiste(int g=0, kategorija k=Junior){
+        godina=g;
+        kategorija1=k;
+    }
 };
 
 

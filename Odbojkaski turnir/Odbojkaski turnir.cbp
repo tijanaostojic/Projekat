@@ -35,6 +35,7 @@
 		<Unit filename="Godiste.hpp" />
 		<Unit filename="Grad.hpp" />
 		<Unit filename="Hala.hpp" />
+		<Unit filename="Igrac.hpp" />
 		<Unit filename="Kola.hpp" />
 		<Unit filename="Korektor.hpp" />
 		<Unit filename="Libero.hpp" />
@@ -42,6 +43,7 @@
 		<Unit filename="Srednji_bloker.hpp" />
 		<Unit filename="Tehnicar.hpp" />
 		<Unit filename="Tim.hpp" />
+		<Unit filename="Utakmica.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
