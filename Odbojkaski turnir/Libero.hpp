@@ -13,7 +13,7 @@ public:
         Odbrana=o;
         Zastita=z;
     }
-    Libero(Libero const &a):Igrac(a.ime, a.prezime, a.godine){}
+    Libero(Libero const &a):Igrac(a.ime, a.prezime, a.godine),Prijem(a.Prijem), Odbrana(a.Odbrana), Zastita(a.Zastita){}
 };
 
 #endif // LIBERO_HPP_INCLUDED

@@ -11,7 +11,7 @@ public:
         brojPrijema=brP;
         PoenSmec=PS;
     }
-    Primac(Primac const &a):Igrac(a.ime, a.prezime, a.godine){}
+    Primac(Primac const &a):Igrac(a.ime, a.prezime, a.godine), brojPrijema(a.brojPrijema), PoenSmec(a.PoenSmec){}
 };
 
 #endif // PRIMAC_HPP_INCLUDED

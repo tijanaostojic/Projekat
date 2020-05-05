@@ -13,7 +13,7 @@ public:
         PoenKuvanje=PKuvanje;
     }
 
-    Tehnicar(Tehnicar const &a):Igrac(a.ime, a.prezime, a.godine){}
+    Tehnicar(Tehnicar const &a):Igrac(a.ime, a.prezime, a.godine), Dizanje(a.Dizanje), PoenKuvanje(a.PoenKuvanje){}
 
     void Kuvaj(SrednjiBloker &sb){
         sb.setzastitaTehnicar(1);

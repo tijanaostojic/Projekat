@@ -13,7 +13,7 @@ public:
         poenSmec=PS;
     }
 
-    SrednjiBloker(SrednjiBloker const &a):Igrac(a.ime, a.prezime, a.godine){}
+    SrednjiBloker(SrednjiBloker const &a):Igrac(a.ime, a.prezime, a.godine), Blokovi(a.Blokovi), poenSmec(a.poenSmec), zastitaTehnicar(a.zastitaTehnicar){}
 
     void Blokiraj(Korektor &k){
         Blokovi++;

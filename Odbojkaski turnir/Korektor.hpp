@@ -13,7 +13,7 @@ public:
         PoenServis=PServis;
         Blokiran=Blok;
     }
-    Korektor(Korektor const &a):Igrac(a.ime, a.prezime, a.godine){}
+    Korektor(Korektor const &a):Igrac(a.ime, a.prezime, a.godine), PoenSmec(a.PoenSmec), PoenServis(a.PoenServis), Blokiran(a.Blokiran){}
 
     void setBlokiran(int brojBlokiran){
         Blokiran+=brojBlokiran;
