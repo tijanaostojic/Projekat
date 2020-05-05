@@ -8,11 +8,13 @@ protected:
     int PoenServis;
     int Blokiran;
 public:
-    Korektor(int PSmec=0, int PServis=0, string i, string p, int g, int Blok=0):Igrac(i, p, g){
+    Korektor(string i, string p,int g, int PSmec=0, int PServis=0, int Blok=0):Igrac(i, p, g){
         PoenSmec=PSmec;
         PoenServis=PServis;
         Blokiran=Blok;
     }
+    Korektor(Korektor const &a):Igrac(a.ime, a.prezime, a.godine){}
+
     void setBlokiran(int brojBlokiran){
         Blokiran+=brojBlokiran;
     }

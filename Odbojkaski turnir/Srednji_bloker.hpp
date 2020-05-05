@@ -1,6 +1,5 @@
 #ifndef SREDNJI_BLOKER_HPP_INCLUDED
 #define SREDNJI_BLOKER_HPP_INCLUDED
-#include "IGRAC.HPP"
 #include "KOREKTOR.HPP"
 class SrednjiBloker:public Igrac
 {
@@ -9,11 +8,14 @@ protected:
     int poenSmec;
     int zastitaTehnicar;
 public:
-    SrednjiBloker(int B=0, int PS=0, string i, string p, int g):Igrac(i, p, g){
+    SrednjiBloker(string i, string p, int g, int B=0, int PS=0):Igrac(i, p, g){
         Blokovi=B;
-        poenSmec=PSmec;
+        poenSmec=PS;
     }
-    void Blokiraj(Korektor k){
+
+    SrednjiBloker(SrednjiBloker const &a):Igrac(a.ime, a.prezime, a.godine){}
+
+    void Blokiraj(Korektor &k){
         Blokovi++;
         k.setBlokiran(1);
         cout<< "Korektor: -1" << endl << "Srednji bloker +1" << endl;

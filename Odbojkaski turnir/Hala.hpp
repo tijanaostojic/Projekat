@@ -1,5 +1,6 @@
 #ifndef HALA_HPP_INCLUDED
 #define HALA_HPP_INCLUDED
+#include "GRAD.HPP"
 class Hala
 {
 protected:
@@ -12,6 +13,7 @@ public:
         brojTerena=brojTerena1;
         kapacitet=kapacitet1;
     }
+    Hala(Hala const &a);
 };
 
 

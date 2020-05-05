@@ -44,6 +44,7 @@
 		<Unit filename="Tehnicar.hpp" />
 		<Unit filename="Tim.hpp" />
 		<Unit filename="Utakmica.hpp" />
+		<Unit filename="gradovi.txt" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

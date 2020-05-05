@@ -8,11 +8,12 @@ protected:
     int Odbrana;
     int Zastita;
 public:
-    Libero(int pr=0, int o=0, int z=0, string i, string p, int g):Igrac(i, p, g){
+    Libero(string i, string p, int g, int pr=0, int o=0, int z=0):Igrac(i, p, g){
         Prijem=pr;
         Odbrana=o;
         Zastita=z;
     }
+    Libero(Libero const &a):Igrac(a.ime, a.prezime, a.godine){}
 };
 
 #endif // LIBERO_HPP_INCLUDED

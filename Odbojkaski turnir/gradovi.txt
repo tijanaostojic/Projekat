@@ -1,0 +1,6 @@
+Beograd|Grad Beograd|Srbija|1 347 000
+Novi Sad|Juzno-backi|Srbija|350 000
+Kikinda|Severnobanatski|Srbija|40 000
+Loznica|Macvanski|Srbija|85 000
+Zagreb|Tmina|Hrvatska|805 000
+Ljubljana|Tmina|Slovenija|280 000
