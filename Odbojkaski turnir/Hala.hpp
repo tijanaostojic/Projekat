@@ -7,13 +7,24 @@ protected:
     Grad grad;
     int brojTerena;
     int kapacitet;
-    int Ljudi;
 public:
-    Hala(string i="", string o="", string d="", int brojS=0, int brojTerena1=0, int kapacitet1=0):grad(i, o, d, brojS){
+    Hala(string i="", string o="", string d="", int brojS=0, int brojTerena1=0, int kapacitet1=0):grad(i, o, d, brojS)
+    {
         brojTerena=brojTerena1;
         kapacitet=kapacitet1;
     }
+
     Hala(Hala const &a);
+
+    friend ostream& operator<<(ostream& izlaz, const Hala& o)
+    {
+
+        izlaz<<o.grad<<endl;
+        izlaz<<"Broj terena: "<<o.brojTerena<<endl;
+        izlaz<<"Kapacitet: "<<o.kapacitet<<endl;
+        return izlaz;
+
+    }
 };
 
 

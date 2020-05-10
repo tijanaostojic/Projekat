@@ -13,6 +13,7 @@ protected:
     int brojIgraca;
     string imeTrenera;
     string prezimeTrenera;
+    Igrac igraci[7];
     Korektor korektor;
     Libero libero;
     Primac primac;
