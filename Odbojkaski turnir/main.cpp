@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <vector>
 using namespace std;
 
 #include "GODISTE.HPP"
@@ -45,16 +45,49 @@ int main()
     najboljeg igraca na svakoj poziciji*/
     citajTxt("gradovi.txt");
 
-    cout << Utakmica::brojUtakmica << endl;
+    //cout << Utakmica::brojUtakmica << endl;
 
     Grad g1("Novi Sad", "Juznobacki", "Srbija", 350000);
-    cout<<g1<<endl<<endl;
+    //cout<<g1<<endl<<endl;
 
     Hala h1("Novi Sad", "Juznobacki", "Srbija", 350000, 3, 200);
-    cout<<h1<<endl;
+    //cout<<h1<<endl;
 
     Igrac i1("Tijana", "Ostojic", 17, 0);
-    cout<<i1;
+    //cout<<i1;
+
+    Libero l1("Draga", "Cirovic", 17);
+    Primac p1("Lea", "Keneski", 16);
+    Tehnicar t1("Jelena", "Jankovic", 16);
+    SrednjiBloker sb1("Sanja", "Pejic", 20);
+    Korektor k1("Lena", "Kutanjac", 16);
+
+    cout<<endl;
+    i1.predstaviSe();
+    cout<<endl;
+    l1.predstaviSe();
+
+    Tim tim1("Strand volley", 3, 40, "Igor", "Tesic");
+    tim1.dodajIgraca(&l1);
+    tim1.dodajIgraca(&p1);
+    tim1.dodajIgraca(&t1);
+    tim1.dodajIgraca(&sb1);
+    tim1.dodajIgraca(&k1);
+
+    cout<<endl;
+
+    tim1.pretraga("korektor");
+    cout<<endl;
+    tim1.pretraga("primac");
+
+    tim1.ispisiIgrace();
+    cout<<endl;
+
+    tim1.izadji(sb1);
+
+    cout<<endl;
+    tim1.ispisiIgrace();
+
 
 
     return 0;

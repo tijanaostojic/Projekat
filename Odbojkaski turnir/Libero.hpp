@@ -13,7 +13,18 @@ public:
         Odbrana=o;
         Zastita=z;
     }
+
+    string getIme()const {return ime;}
+    string getPrezime()const {return prezime;}
+
     Libero(Libero const &a):Igrac(a.ime, a.prezime, a.godine),Prijem(a.Prijem), Odbrana(a.Odbrana), Zastita(a.Zastita){}
+
+    void predstaviSe(){
+        Igrac::predstaviSe();
+        cout<<"Igram na poziciji libera."<<endl;
+    }
+
+    int identifikacija(){return 2;}
 };
 
 #endif // LIBERO_HPP_INCLUDED

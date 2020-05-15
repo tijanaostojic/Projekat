@@ -13,6 +13,9 @@ public:
         poenSmec=PS;
     }
 
+    string getIme()const {return ime;}
+    string getPrezime()const {return prezime;}
+
     SrednjiBloker(SrednjiBloker const &a):Igrac(a.ime, a.prezime, a.godine), Blokovi(a.Blokovi), poenSmec(a.poenSmec), zastitaTehnicar(a.zastitaTehnicar){}
 
     void Blokiraj(Korektor &k){
@@ -23,6 +26,13 @@ public:
     void setzastitaTehnicar(int kuvanje){
         zastitaTehnicar-=kuvanje;
     }
+
+    void predstaviSe(){
+        Igrac::predstaviSe();
+        cout<<"Igram na poziciji srednjaka."<<endl;
+    }
+
+    int identifikacija(){return 4;}
 };
 
 

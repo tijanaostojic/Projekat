@@ -15,9 +15,19 @@ public:
     }
     Korektor(Korektor const &a):Igrac(a.ime, a.prezime, a.godine), PoenSmec(a.PoenSmec), PoenServis(a.PoenServis), Blokiran(a.Blokiran){}
 
+    string getIme()const {return ime;}
+    string getPrezime()const {return prezime;}
+
     void setBlokiran(int brojBlokiran){
         Blokiran+=brojBlokiran;
     }
+
+    void predstaviSe(){
+        Igrac::predstaviSe();
+        cout<<"Igram na poziciji korektora."<<endl;
+    }
+
+    int identifikacija(){return 1;}
 };
 
 #endif // KOREKTOR_HPP_INCLUDED

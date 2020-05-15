@@ -13,14 +13,9 @@ protected:
     int brojIgraca;
     string imeTrenera;
     string prezimeTrenera;
-    Igrac igraci[7];
-    Korektor korektor;
-    Libero libero;
-    Primac primac;
-    SrednjiBloker srednjak;
-    Tehnicar tehnicar;
+    vector <Igrac*> igraci;
 public:
-    Tim(string i, int brE, int brI, string imeT, string prezimeT, Primac p, Korektor k, Libero l, Tehnicar t, SrednjiBloker s):primac(p), korektor(k), libero(l), tehnicar(t), srednjak(s){
+    Tim(string i, int brE, int brI, string imeT, string prezimeT){
         Ime=i;
         brojEkipa=brE;
         brojIgraca=brI;
@@ -28,6 +23,46 @@ public:
         prezimeTrenera=prezimeT;
     }
     Tim(Tim const &a);
+
+    void dodajIgraca(Igrac *i){
+        igraci.push_back(i);
+    }
+
+    void ispisiIgrace(){
+        cout<<"Igraci tima "<<Ime<<": "<<endl;
+        for (auto it=igraci.begin(); it!=igraci.end(); it++){
+            (*it)->predstaviSe();
+        }
+    }
+
+    void pretraga(string s){
+        int a;
+        int b=0;
+        if(s=="korektor"||s=="Korektor") a=1;
+        if(s=="libero"||s=="Libero") a=2;
+        if(s=="primac"||s=="Primac") a=3;
+        if(s=="srednjak"||s=="Srednjak"||"Srednji bloker") a=4;
+        if(s=="tehnicar"||s=="Tehnicar") a=5;
+         for (auto it=igraci.begin(); it!=igraci.end(); it++){
+            if((*it)->identifikacija()==a){
+                    cout<< **it <<endl;
+                    b++;
+            }
+         }
+         if(b==0) cout<<"Ne postoji igrac na toj poziciji"<<endl;
+    }
+
+    bool izadji(const Igrac &i){
+        for (auto it=igraci.begin(); it!=igraci.end(); it++)
+        {
+            if (i.getIme()==(*it)->getIme() && i.getPrezime()==(*it)->getPrezime())
+            {
+                igraci.erase(it);
+                return true;
+            }
+        }
+        return false;
+    }
 };
 
 #endif // TIM_HPP_INCLUDED

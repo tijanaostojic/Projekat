@@ -16,6 +16,10 @@ public:
         korisnost=k;
     }
 
+    string getIme()const {return ime;}
+    string getPrezime()const {return prezime;}
+
+
     friend ostream& operator<<(ostream& izlaz, const Igrac& o)
     {
 
@@ -26,6 +30,13 @@ public:
         return izlaz;
 
     }
+
+    virtual void predstaviSe(){
+        cout<< "Ja sam "<<ime<<" "<<prezime<<endl;
+        cout<< "Imam "<<godine<< " godina."<<endl;
+    }
+
+    virtual int identifikacija(){return 0;}
 };
 
 #endif // IGRAC_HPP_INCLUDED
