@@ -63,9 +63,9 @@ int main()
     Korektor k1("Lena", "Kutanjac", 16);
 
     cout<<endl;
-    i1.predstaviSe();
+    //i1.predstaviSe();
     cout<<endl;
-    l1.predstaviSe();
+    //l1.predstaviSe();
 
     Tim tim1("Strand volley", 3, 40, "Igor", "Tesic");
     tim1.dodajIgraca(&l1);
@@ -76,17 +76,19 @@ int main()
 
     cout<<endl;
 
-    tim1.pretraga("korektor");
+    //tim1.pretraga("korektor");
     cout<<endl;
-    tim1.pretraga("primac");
+    tim1.pretraga("libero");
+    cout<<endl<<endl<<endl;
+    tim1.pretraga("korektorrrrr");
 
-    tim1.ispisiIgrace();
+    //tim1.ispisiIgrace();
     cout<<endl;
 
-    tim1.izadji(sb1);
+    //tim1.izadji(sb1);
 
     cout<<endl;
-    tim1.ispisiIgrace();
+    //tim1.ispisiIgrace();
 
 
 

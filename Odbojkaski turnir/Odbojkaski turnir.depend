@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589573759 source:c:\projekat programiranje\projekat\odbojkaski turnir\main.cpp
+1589980008 source:c:\projekat programiranje\projekat\odbojkaski turnir\main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -25,7 +25,7 @@
 1589573680 c:\projekat programiranje\projekat\odbojkaski turnir\korektor.hpp
 	"IGRAC.HPP"
 
-1589573654 c:\projekat programiranje\projekat\odbojkaski turnir\igrac.hpp
+1589962614 c:\projekat programiranje\projekat\odbojkaski turnir\igrac.hpp
 
 1589573680 c:\projekat programiranje\projekat\odbojkaski turnir\libero.hpp
 	"IGRAC.HPP"
@@ -39,7 +39,7 @@
 1589573680 c:\projekat programiranje\projekat\odbojkaski turnir\tehnicar.hpp
 	"SREDNJI_BLOKER.hpp"
 
-1589573637 c:\projekat programiranje\projekat\odbojkaski turnir\tim.hpp
+1589980360 c:\projekat programiranje\projekat\odbojkaski turnir\tim.hpp
 	"KOREKTOR.HPP"
 	"LIBERO.HPP"
 	"PRIMAC.HPP"
