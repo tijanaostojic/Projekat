@@ -16,7 +16,7 @@ public:
     string getIme()const {return ime;}
     string getPrezime()const {return prezime;}
 
-    Primac(Primac const &a):Igrac(a.ime, a.prezime, a.godine), brojPrijema(a.brojPrijema), PoenSmec(a.PoenSmec){}
+    Primac(const Primac &a):Igrac(a.ime, a.prezime, a.godine), brojPrijema(a.brojPrijema), PoenSmec(a.PoenSmec){}
 
     void PoentirajSmecp(Libero &l){
         PoenSmec++;

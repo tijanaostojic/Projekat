@@ -17,9 +17,9 @@ public:
     string getIme()const {return ime;}
     string getPrezime()const {return prezime;}
 
-    Tehnicar(Tehnicar const &a):Igrac(a.ime, a.prezime, a.godine), Dizanje(a.Dizanje), PoenKuvanje(a.PoenKuvanje){}
+    Tehnicar(const Tehnicar &a):Igrac(a.ime, a.prezime, a.godine), Dizanje(a.Dizanje), PoenKuvanje(a.PoenKuvanje){}
 
-    void Kuvaj(SrednjiBloker &sb){
+    void dizanje(SrednjiBloker &sb){
         PoenKuvanje++;
         korisnost++;
         sb.setzastitaTehnicar(1);

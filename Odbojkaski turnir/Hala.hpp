@@ -14,7 +14,7 @@ public:
         kapacitet=kapacitet1;
     }
 
-    Hala(Hala const &a);
+    Hala(const Hala &a):grad(a.grad), brojTerena(a.brojTerena), kapacitet(a.kapacitet){}
 
     friend ostream& operator<<(ostream& izlaz, const Hala& o)
     {

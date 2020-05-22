@@ -14,9 +14,9 @@ public:
         PoenServis=PServis;
         Blokiran=Blok;
     }
-    Korektor(Korektor const &a):Igrac(a.ime, a.prezime, a.godine), PoenSmec(a.PoenSmec), PoenServis(a.PoenServis), Blokiran(a.Blokiran){}
+    Korektor(const Korektor &a):Igrac(a.ime, a.prezime, a.godine), PoenSmec(a.PoenSmec), PoenServis(a.PoenServis), Blokiran(a.Blokiran){}
 
-    string getIme()const {return ime;}
+    string getIme()const{return ime;}
     string getPrezime()const {return prezime;}
 
     void PoentirajSmeck(Primac &p){

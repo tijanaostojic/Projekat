@@ -23,11 +23,30 @@ public:
         imeTrenera=imeT;
         prezimeTrenera=prezimeT;
     }
-    Tim(Tim const &a);
+    Tim(const Tim &a):Ime(a.Ime), brojEkipa(a.brojEkipa), brojIgraca(a.brojIgraca), imeTrenera(a.imeTrenera), prezimeTrenera(a.prezimeTrenera){}
+    string getIme()const{return Ime;}
+    vector <Igrac*> getigraci()const{return igraci;}
 
     void dodajIgraca(Igrac *i)
     {
         igraci.push_back(i);
+    }
+
+    void korisnostTima(){
+        int x;
+    for (auto it=igraci.begin(); it!=igraci.end(); it++)
+        {
+            (*it)->predstaviSe();
+            cin>>x;
+            (*it)->setKorisnost(x);
+        }
+
+    for (auto it=igraci.begin(); it!=igraci.end(); it++)
+        {
+            (*it)->predstaviSe();
+            cout<<"   Korisnost: ";
+           cout<<(*it)->getKorisnost()<<endl;
+        }
     }
 
     void ispisiIgrace()const

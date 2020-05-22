@@ -18,15 +18,17 @@ public:
 
     string getIme()const {return ime;}
     string getPrezime()const {return prezime;}
-
-
+    int getKorisnost()const{return korisnost;}
+    void setKorisnost(int korisnostt){
+        korisnost=korisnostt;
+    }
     friend ostream& operator<<(ostream& izlaz, const Igrac& o)
     {
 
         izlaz<<"Ime: "<<o.ime<<endl;
         izlaz<<"Prezime: "<<o.prezime<<endl;
         izlaz<<"Godine: "<<o.godine<<endl;
-        izlaz<<"Korisnost: "<<o.korisnost;
+        izlaz<<"Korisnost: "<<o.korisnost<<endl;
         return izlaz;
 
     }

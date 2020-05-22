@@ -16,6 +16,7 @@ using namespace std;
 #include "UTAKMICA.HPP"
 #include "HALA.HPP"
 #include "FUNKCIJE.HPP"
+
 int Utakmica::brojUtakmica=0;
 
 
@@ -86,34 +87,35 @@ int main()
     Hala h3("Kikinda", "Severnobanatski", "Srbija", 40000, 1, 50);
     Hala h4("Loznica", "Macvanski", "Srbija", 85000, 1, 100);
 
+    Utakmica u1(tim1, tim2, h1, 3, 2);
+    Utakmica u2(tim1, tim3, h2, 1, 3);
+    Utakmica u3(tim2, tim3, h3, 0, 3);
+    Utakmica u4(tim2, tim1, h1, 2, 3);
+    Utakmica u5(tim3, tim1, h2, 1, 3);
+    Utakmica u6(tim3, tim2, h3, 3, 1);
+    cout<<"Upisite korisnost igraca tima "<<tim1.getIme()<<":"<<endl;
+    tim1.korisnostTima();
+    cout<<endl;
+    cout<<"Upisite korisnost igraca tima "<<tim2.getIme()<<":"<<endl;
+    tim2.korisnostTima();
+    cout<<endl;
+    cout<<"Upisite korisnost igraca tima "<<tim3.getIme()<<":"<<endl;
+    tim3.korisnostTima();
+    cout<<endl;
+
+    izaberiLibera(tim1, tim2, tim3);
+    izaberiPrimaca(tim1, tim2, tim3);
+    izaberiTehnicara(tim1, tim2, tim3);
+    izaberisrednjaka(tim1, tim2, tim3);
+    izaberiKorektora(tim1, tim2, tim3);
+
+
+
     meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);
 
-
-    /*Igrac i1("Tijana", "Ostojic", 17, 0);
-    cout<<endl;
-    i1.predstaviSe();
-    cout<<endl;
-    l1.predstaviSe();*/
-
-    //Utakmica u1(tim1, tim2, h1, 3, 2);
-
-
     cout<<endl;
 
-    cout<<endl;
-    tim1.pretraga("libero");
-    cout<<endl<<endl<<endl;
-    tim1.pretraga("korektor");
-
-    /*tim1.ispisiIgrace();
-    cout<<endl;
-
-    tim1.izadji(sb1);
-
-    cout<<endl;
-    tim1.ispisiIgrace();*/
-
-
-
+   // l1.setKorisnost(3);
+    //cout<<l1.getKorisnost()<<endl;
     return 0;
 }

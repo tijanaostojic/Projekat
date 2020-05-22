@@ -23,6 +23,7 @@ public:
         brojUtakmica--;
     }
 
+
 };
 
 #endif // UTAKMICA_HPP_INCLUDED

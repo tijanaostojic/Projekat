@@ -15,6 +15,8 @@ public:
         drzava=d;
         brojStanovnika=brS;
     }
+
+    Grad(const Grad &a):ime(a.ime), okrug(a.okrug), drzava(a.drzava), brojStanovnika(a.brojStanovnika){}
     friend ostream& operator<<(ostream& izlaz, const Grad& o)
     {
 

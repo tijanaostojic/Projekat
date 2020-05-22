@@ -18,7 +18,7 @@ public:
     string getIme()const {return ime;}
     string getPrezime()const {return prezime;}
 
-    Libero(Libero const &a):Igrac(a.ime, a.prezime, a.godine),Prijem(a.Prijem), Odbrana(a.Odbrana), Zastita(a.Zastita){}
+    Libero(const Libero &a):Igrac(a.ime, a.prezime, a.godine),Prijem(a.Prijem), Odbrana(a.Odbrana), Zastita(a.Zastita){}
 
     void dobraZastita(Tehnicar &t){
         Zastita++;

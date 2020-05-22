@@ -15,9 +15,9 @@ public:
     }
 
     string getIme()const {return ime;}
-    string getPrezime()const {return prezime;}
+    string getPrezime()const{return prezime;}
 
-    SrednjiBloker(SrednjiBloker const &a):Igrac(a.ime, a.prezime, a.godine), Blokovi(a.Blokovi), poenSmec(a.poenSmec), zastitaTehnicar(a.zastitaTehnicar){}
+    SrednjiBloker(const SrednjiBloker &a):Igrac(a.ime, a.prezime, a.godine), Blokovi(a.Blokovi), poenSmec(a.poenSmec), zastitaTehnicar(a.zastitaTehnicar){}
 
     void Blokiraj(){
         Blokovi++;
