@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../../../Users/Lenovo/Desktop/najboljiigraci.txt" />
 		<Unit filename="Godiste.hpp" />
 		<Unit filename="Grad.hpp" />
 		<Unit filename="Hala.hpp" />

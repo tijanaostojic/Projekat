@@ -88,11 +88,8 @@ int main()
     Hala h4("Loznica", "Macvanski", "Srbija", 85000, 1, 100);
 
     Utakmica u1(tim1, tim2, h1, 3, 2);
-    Utakmica u2(tim1, tim3, h2, 1, 3);
-    Utakmica u3(tim2, tim3, h3, 0, 3);
-    Utakmica u4(tim2, tim1, h1, 2, 3);
-    Utakmica u5(tim3, tim1, h2, 1, 3);
-    Utakmica u6(tim3, tim2, h3, 3, 1);
+    Utakmica u2(tim1, tim3, h2, 3, 0);
+    Utakmica u3(tim2, tim3, h3, 3, 1);
     cout<<"Upisite korisnost igraca tima "<<tim1.getIme()<<":"<<endl;
     tim1.korisnostTima();
     cout<<endl;
@@ -118,9 +115,11 @@ int main()
 
     Korektor* najboljiK(izaberikorektora(tim1, tim2, tim3));
     pisiTxt("najboljiigraci.txt", "Najbolji korektor je: "+najboljiK->getIme()+" "+najboljiK->getPrezime()+"\n", 'a');
-    //meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);
+
     citajTxt("najboljiigraci.txt");
-    cout<<endl;
+    cout<<endl<<endl<<endl<<endl;
+    //meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);
+
 
 
 

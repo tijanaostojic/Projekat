@@ -244,8 +244,23 @@ void meni(const Hala &h1,const Hala &h2,const Hala &h3,const Hala &h4, const Gra
     {
         cout<<"----Odigrane utakmice----"<<endl<<endl<<endl;
         cout<<"1. Strand Volley - NS Volley Team, 3:2"<<endl;
-        cout<<"2. Strand Volley - Star, 1:3"<<endl;
-        cout<<"3. NS Volley Team - Star, 0:3"<<endl<<endl<<endl;
+        cout<<"2. Strand Volley - Star, 3:0"<<endl;
+        cout<<"3. NS Volley Team - Star, 3:1"<<endl<<endl<<endl;
+        cout<<"=================="<<endl;
+        cout<<"-----1. MESTO-----"<<endl;
+        cout<<"=================="<<endl;
+        cout<<"---Strand Volley---"<<endl;
+        cout<<"=================="<<endl<<endl<<endl;
+        cout<<"=================="<<endl;
+        cout<<"-----2. MESTO-----"<<endl;
+        cout<<"=================="<<endl;
+        cout<<"--NS Volley Team--"<<endl;
+        cout<<"=================="<<endl<<endl<<endl;
+        cout<<"=================="<<endl;
+        cout<<"-----3. MESTO-----"<<endl;
+        cout<<"=================="<<endl;
+        cout<<"-------Star-------"<<endl;
+        cout<<"=================="<<endl<<endl<<endl;
     }
     if(izbor==5)
     {
