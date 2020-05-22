@@ -103,19 +103,26 @@ int main()
     tim3.korisnostTima();
     cout<<endl;
 
-    izaberiLibera(tim1, tim2, tim3);
-    izaberiPrimaca(tim1, tim2, tim3);
-    izaberiTehnicara(tim1, tim2, tim3);
-    izaberisrednjaka(tim1, tim2, tim3);
-    izaberiKorektora(tim1, tim2, tim3);
 
+    Libero* najboljiL(izaberiLibera(tim1, tim2, tim3));
+    pisiTxt("najboljiigraci.txt", "Najbolji libero je: "+najboljiL->getIme()+" "+najboljiL->getPrezime()+"\n", 'w');
 
+    Primac* najboljiP(izaberiPrimaca(tim1, tim2, tim3));
+    pisiTxt("najboljiigraci.txt", "Najbolji primac je: "+najboljiP->getIme()+" "+najboljiP->getPrezime()+"\n", 'a');
 
-    meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);
+    Tehnicar* najboljiT(izaberiTehnicara(tim1, tim2, tim3));
+    pisiTxt("najboljiigraci.txt", "Najbolji tehnicar je: "+najboljiT->getIme()+" "+najboljiT->getPrezime()+"\n", 'a');
 
+    SrednjiBloker* najboljiS(izaberisrednjaka(tim1, tim2, tim3));
+    pisiTxt("najboljiigraci.txt", "Najbolji srednjak je: "+najboljiS->getIme()+" "+najboljiS->getPrezime()+"\n", 'a');
+
+    Korektor* najboljiK(izaberikorektora(tim1, tim2, tim3));
+    pisiTxt("najboljiigraci.txt", "Najbolji korektor je: "+najboljiK->getIme()+" "+najboljiK->getPrezime()+"\n", 'a');
+    //meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);
+    citajTxt("najboljiigraci.txt");
     cout<<endl;
 
-   // l1.setKorisnost(3);
-    //cout<<l1.getKorisnost()<<endl;
+
+
     return 0;
 }

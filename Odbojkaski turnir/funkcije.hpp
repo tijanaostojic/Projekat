@@ -26,6 +26,21 @@ vector<string> splitSen(string str, char c=',')
 
     return v;
 }
+void pisiTxt(string nazivFajla, string tekst, char mode='a')
+{
+    ofstream fajl;
+
+    if (mode=='a'){
+        fajl.open (nazivFajla, ios_base::app);
+    }else{
+        fajl.open (nazivFajla);
+    }
+
+    fajl << tekst;
+
+    fajl.close();
+
+}
 void citajTxt(string nazivFajla)
 {
     string linija;
@@ -44,10 +59,9 @@ void citajTxt(string nazivFajla)
 
 }
 
-Libero izaberiLibera( Tim &tim1, Tim &tim2, Tim &tim3)
+Libero* izaberiLibera( Tim &tim1, Tim &tim2, Tim &tim3)
 {
     int liberokorisnost[3];
-    Libero najboljilibero();
     liberokorisnost[0]=tim1.getigraci()[0]->getKorisnost();
     liberokorisnost[1]=tim1.getigraci()[0]->getKorisnost();
     liberokorisnost[2]=tim3.getigraci()[0]->getKorisnost();
@@ -60,27 +74,22 @@ Libero izaberiLibera( Tim &tim1, Tim &tim2, Tim &tim3)
             maxl=i;
         }
     }
-    switch(maxl)
-    {
-    case 0:
-        najboljilibero=((*tim1)->getigraci())[0];
-        break;
-    case 1:
-        najboljilibero=tim2.getigraci()[1];
-        break;
-    case 3:
-        najboljilibero=tim3.getigraci()[2];
-        break;
-    }
-    return najboljilibero;
+    if(maxl==0)
+            return (Libero*)tim1.getigraci()[0];
+
+    else if(maxl==1)
+
+            return (Libero*)tim2.getigraci()[0];
+    else
+            return (Libero*)tim3.getigraci()[0];
+
 }
-Primac izaberiPrimaca( Tim tim1, Tim tim2, Tim tim3)
+Primac* izaberiPrimaca( Tim &tim1, Tim &tim2, Tim &tim3)
 {
     int primackorisnost[3];
-    Primac najboljiprimac();
-    primackorisnost[0]=tim1.getigraci()[0].getKorisnost();
-    primackorisnost[1]=tim2.getigraci()[0].getKorisnost();
-    primackorisnost[2]=tim3.getigraci()[0].getKorisnost();
+    primackorisnost[0]=tim1.getigraci()[1]->getKorisnost();
+    primackorisnost[1]=tim1.getigraci()[1]->getKorisnost();
+    primackorisnost[2]=tim3.getigraci()[1]->getKorisnost();
     int max=primackorisnost[0], maxp=0;
     for(int i=1; i<3; i++)
     {
@@ -90,27 +99,22 @@ Primac izaberiPrimaca( Tim tim1, Tim tim2, Tim tim3)
             maxp=i;
         }
     }
-    switch(maxp)
-    {
-    case 0:
-        najboljiprimac=tim1.getigraci()[0];
-        break;
-    case 1:
-        najboljiprimac=tim2.getigraci()[1];
-        break;
-    case 3:
-        najboljiprimac=tim3.getigraci()[2];
-        break;
-    }
-    return najboljiprimac;
+    if(maxp==0)
+            return (Primac*)tim1.getigraci()[1];
+
+    else if(maxp==1)
+
+            return (Primac*)tim2.getigraci()[1];
+    else
+            return (Primac*)tim3.getigraci()[1];
+
 }
-Tehnicar izaberiTehnicara(Tim tim1, Tim tim2, Tim tim3)
+Tehnicar* izaberiTehnicara( Tim &tim1, Tim &tim2, Tim &tim3)
 {
     int tehnicarkorisnost[3];
-    Tehnicar najboljitehnicar();
-    tehnicarkorisnost[0]=tim1.getigraci()[0].getKorisnost();
-    tehnicarkorisnost[1]=tim2.getigraci()[0].getKorisnost();
-    tehnicarkorisnost[2]=tim3.getigraci()[0].getKorisnost();
+    tehnicarkorisnost[0]=tim1.getigraci()[2]->getKorisnost();
+    tehnicarkorisnost[1]=tim1.getigraci()[2]->getKorisnost();
+    tehnicarkorisnost[2]=tim3.getigraci()[2]->getKorisnost();
     int max=tehnicarkorisnost[0], maxt=0;
     for(int i=1; i<3; i++)
     {
@@ -120,57 +124,47 @@ Tehnicar izaberiTehnicara(Tim tim1, Tim tim2, Tim tim3)
             maxt=i;
         }
     }
-    switch(maxt)
-    {
-    case 0:
-        najboljitehnicar=tim1.getigraci()[0];
-        break;
-    case 1:
-        najboljitehnicar=tim2.getigraci()[1];
-        break;
-    case 3:
-        najboljitehnicar=tim3.getigraci()[2];
-        break;
-    }
-    return najboljitehnicar;
+    if(maxt==0)
+            return (Tehnicar*)tim1.getigraci()[2];
+
+    else if(maxt==1)
+
+            return (Tehnicar*)tim2.getigraci()[2];
+    else
+            return (Tehnicar*)tim3.getigraci()[2];
+
 }
-SrednjiBloker izaberisrednjaka( Tim tim1, Tim tim2, Tim tim3)
+SrednjiBloker* izaberisrednjaka( Tim &tim1, Tim &tim2, Tim &tim3)
 {
-    int srednjakorisnost[3];
-    SrednjiBloker najboljisrednjak();
-    srednjakorisnost[0]=tim1.getigraci()[0].getKorisnost();
-    srednjakorisnost[1]=tim2.getigraci()[0].getKorisnost();
-    srednjakorisnost[2]=tim3.getigraci()[0].getKorisnost();
-    int max=srednjakorisnost[0], maxsb=0;
+    int srednjakkorisnost[3];
+    srednjakkorisnost[0]=tim1.getigraci()[3]->getKorisnost();
+    srednjakkorisnost[1]=tim1.getigraci()[3]->getKorisnost();
+    srednjakkorisnost[2]=tim3.getigraci()[3]->getKorisnost();
+    int max=srednjakkorisnost[0], maxsb=0;
     for(int i=1; i<3; i++)
     {
-        if(srednjakorisnost[i]>max)
+        if(srednjakkorisnost[i]>max)
         {
-            max=srednjakorisnost[i];
+            max=srednjakkorisnost[i];
             maxsb=i;
         }
     }
-    switch(maxsb)
-    {
-    case 0:
-        najboljisrednjak=tim1.getigraci()[0];
-        break;
-    case 1:
-        najboljisrednjak=tim2.getigraci()[1];
-        break;
-    case 3:
-        najboljisrednjak=tim3.getigraci()[2];
-        break;
-    }
-    return najboljisrednjak;
+    if(maxsb==0)
+            return (SrednjiBloker*)tim1.getigraci()[3];
+
+    else if(maxsb==1)
+
+            return (SrednjiBloker*)tim2.getigraci()[3];
+    else
+            return (SrednjiBloker*)tim3.getigraci()[3];
+
 }
-Korektor izaberiKorektora( Tim tim1, Tim tim2, Tim tim3)
+Korektor* izaberikorektora( Tim &tim1, Tim &tim2, Tim &tim3)
 {
     int korektorkorisnost[3];
-    Korektor najboljikorektor();
-    korektorkorisnost[0]=tim1.getigraci()[0].getKorisnost();
-    korektorkorisnost[1]=tim2.getigraci()[0].getKorisnost();
-    korektorkorisnost[2]=tim3.getigraci()[0].getKorisnost();
+    korektorkorisnost[0]=tim1.getigraci()[4]->getKorisnost();
+    korektorkorisnost[1]=tim1.getigraci()[4]->getKorisnost();
+    korektorkorisnost[2]=tim3.getigraci()[4]->getKorisnost();
     int max=korektorkorisnost[0], maxk=0;
     for(int i=1; i<3; i++)
     {
@@ -180,19 +174,15 @@ Korektor izaberiKorektora( Tim tim1, Tim tim2, Tim tim3)
             maxk=i;
         }
     }
-    switch(maxk)
-    {
-    case 0:
-        najboljikorektor=tim1.getigraci()[0];
-        break;
-    case 1:
-        najboljikorektor=tim2.getigraci()[1];
-        break;
-    case 3:
-        najboljikorektor=tim3.getigraci()[2];
-        break;
-    }
-    return najboljikorektor;
+    if(maxk==0)
+            return (Korektor*)tim1.getigraci()[4];
+
+    else if(maxk==1)
+
+            return (Korektor*)tim2.getigraci()[4];
+    else
+            return (Korektor*)tim3.getigraci()[4];
+
 }
 void meni(const Hala &h1,const Hala &h2,const Hala &h3,const Hala &h4, const Grad &g1, const Grad &g2, const Grad &g3, const Tim &tim1, const Tim &tim2, const Tim &tim3)
 {
