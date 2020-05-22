@@ -1,6 +1,7 @@
 #ifndef KOREKTOR_HPP_INCLUDED
 #define KOREKTOR_HPP_INCLUDED
 #include "IGRAC.HPP"
+#include "PRIMAC.HPP"
 class Korektor:public Igrac
 {
 protected:
@@ -18,13 +19,22 @@ public:
     string getIme()const {return ime;}
     string getPrezime()const {return prezime;}
 
+    void PoentirajSmeck(Primac &p){
+        PoenSmec++;
+        korisnost++;
+        p.setLosaOdbrana(1);
+        cout<<"Korektor +1, primac -1"<<endl;
+    }
+
     void setBlokiran(int brojBlokiran){
         Blokiran+=brojBlokiran;
+        korisnost-=korisnost;
     }
+
 
     void predstaviSe(){
         Igrac::predstaviSe();
-        cout<<"Igram na poziciji korektora."<<endl;
+        cout<<" - korektor."<<endl;
     }
 
     int identifikacija(){return 1;}

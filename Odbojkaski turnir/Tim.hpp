@@ -30,7 +30,7 @@ public:
         igraci.push_back(i);
     }
 
-    void ispisiIgrace()
+    void ispisiIgrace()const
     {
         cout<<"Igraci tima "<<Ime<<": "<<endl;
         for (auto it=igraci.begin(); it!=igraci.end(); it++)

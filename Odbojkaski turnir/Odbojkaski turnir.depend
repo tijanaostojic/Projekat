@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589980008 source:c:\projekat programiranje\projekat\odbojkaski turnir\main.cpp
+1590140069 source:c:\projekat programiranje\projekat\odbojkaski turnir\main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -15,42 +15,49 @@
 	"TIM.HPP"
 	"UTAKMICA.HPP"
 	"HALA.HPP"
+	"FUNKCIJE.HPP"
 
 1587920884 c:\projekat programiranje\projekat\odbojkaski turnir\godiste.hpp
 
-1589145600 c:\projekat programiranje\projekat\odbojkaski turnir\grad.hpp
+1589985385 c:\projekat programiranje\projekat\odbojkaski turnir\grad.hpp
 
 1588680688 c:\projekat programiranje\projekat\odbojkaski turnir\kola.hpp
 
-1589573680 c:\projekat programiranje\projekat\odbojkaski turnir\korektor.hpp
+1590142464 c:\projekat programiranje\projekat\odbojkaski turnir\korektor.hpp
 	"IGRAC.HPP"
+	"PRIMAC.HPP"
 
-1589962614 c:\projekat programiranje\projekat\odbojkaski turnir\igrac.hpp
+1589986793 c:\projekat programiranje\projekat\odbojkaski turnir\igrac.hpp
 
-1589573680 c:\projekat programiranje\projekat\odbojkaski turnir\libero.hpp
+1590101491 c:\projekat programiranje\projekat\odbojkaski turnir\libero.hpp
 	"IGRAC.HPP"
+	"TEHNICAR.HPP"
 
-1589573680 c:\projekat programiranje\projekat\odbojkaski turnir\primac.hpp
+1590140879 c:\projekat programiranje\projekat\odbojkaski turnir\primac.hpp
 	"IGRAC.HPP"
+	"LIBERO.HPP"
 
-1589573680 c:\projekat programiranje\projekat\odbojkaski turnir\srednji_bloker.hpp
+1590142464 c:\projekat programiranje\projekat\odbojkaski turnir\srednji_bloker.hpp
+	"IGRAC.HPP"
 	"KOREKTOR.HPP"
 
-1589573680 c:\projekat programiranje\projekat\odbojkaski turnir\tehnicar.hpp
+1590101491 c:\projekat programiranje\projekat\odbojkaski turnir\tehnicar.hpp
 	"SREDNJI_BLOKER.hpp"
 
-1589980360 c:\projekat programiranje\projekat\odbojkaski turnir\tim.hpp
+1590072531 c:\projekat programiranje\projekat\odbojkaski turnir\tim.hpp
 	"KOREKTOR.HPP"
 	"LIBERO.HPP"
 	"PRIMAC.HPP"
 	"SREDNJI_BLOKER.HPP"
 	"TEHNICAR.HPP"
 
-1589570450 c:\projekat programiranje\projekat\odbojkaski turnir\utakmica.hpp
+1590138766 c:\projekat programiranje\projekat\odbojkaski turnir\utakmica.hpp
 	"TIM.HPP"
 	"HALA.HPP"
 	"TEHNICAR.HPP"
 
-1589145504 c:\projekat programiranje\projekat\odbojkaski turnir\hala.hpp
+1590139117 c:\projekat programiranje\projekat\odbojkaski turnir\hala.hpp
 	"GRAD.HPP"
+
+1590095975 c:\projekat programiranje\projekat\odbojkaski turnir\funkcije.hpp
 

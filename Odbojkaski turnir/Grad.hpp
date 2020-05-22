@@ -18,7 +18,7 @@ public:
     friend ostream& operator<<(ostream& izlaz, const Grad& o)
     {
 
-        izlaz<<"Ime grada: "<<o.ime<<endl;
+        izlaz<<"Grad: "<<o.ime<<endl;
         izlaz<<"Okrug: "<<o.okrug<<endl;
         izlaz<<"Drzava: "<<o.drzava<<endl;
         izlaz<<"Broj stanovnika: "<<o.brojStanovnika;

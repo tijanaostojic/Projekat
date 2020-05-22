@@ -1,6 +1,7 @@
 #ifndef PRIMAC_HPP_INCLUDED
 #define PRIMAC_HPP_INCLUDED
 #include "IGRAC.HPP"
+#include "LIBERO.HPP"
 class Primac:public Igrac
 {
 protected:
@@ -17,9 +18,21 @@ public:
 
     Primac(Primac const &a):Igrac(a.ime, a.prezime, a.godine), brojPrijema(a.brojPrijema), PoenSmec(a.PoenSmec){}
 
+    void PoentirajSmecp(Libero &l){
+        PoenSmec++;
+        korisnost++;
+        l.setdobroDodavanje(1);
+        cout<<"Primac +1, libero +1."<<endl;
+    }
+
+    void setLosaOdbrana(int BrojLosihOdbrana){
+        brojPrijema-=BrojLosihOdbrana;
+        korisnost-=korisnost;
+    }
+
     void predstaviSe(){
         Igrac::predstaviSe();
-        cout<<"Igram na poziciji primaca."<<endl;
+        cout<<" - primac."<<endl;
     }
 
     int identifikacija(){return 3;}

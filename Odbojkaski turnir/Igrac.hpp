@@ -32,8 +32,7 @@ public:
     }
 
     virtual void predstaviSe(){
-        cout<< "Ja sam "<<ime<<" "<<prezime<<endl;
-        cout<< "Imam "<<godine<< " godina."<<endl;
+        cout<<ime<<" "<<prezime<<", "<<godine<<" godina";
     }
 
     virtual int identifikacija(){return 0;}

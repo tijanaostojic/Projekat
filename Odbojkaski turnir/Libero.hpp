@@ -1,6 +1,7 @@
 #ifndef LIBERO_HPP_INCLUDED
 #define LIBERO_HPP_INCLUDED
 #include "IGRAC.HPP"
+#include "TEHNICAR.HPP"
 class Libero:public Igrac
 {
 protected:
@@ -19,9 +20,21 @@ public:
 
     Libero(Libero const &a):Igrac(a.ime, a.prezime, a.godine),Prijem(a.Prijem), Odbrana(a.Odbrana), Zastita(a.Zastita){}
 
+    void dobraZastita(Tehnicar &t){
+        Zastita++;
+        korisnost++;
+        t.setDizanje(1);
+        cout<<"Libero +1, tehnicar -1"<<endl;
+    }
+
+    void setdobroDodavanje(int brojDobrihDodavanja){
+        Odbrana+=brojDobrihDodavanja;
+        korisnost-=korisnost;
+    }
+
     void predstaviSe(){
         Igrac::predstaviSe();
-        cout<<"Igram na poziciji libera."<<endl;
+        cout<<" - libero."<<endl;
     }
 
     int identifikacija(){return 2;}

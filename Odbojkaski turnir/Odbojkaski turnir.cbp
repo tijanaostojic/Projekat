@@ -44,6 +44,7 @@
 		<Unit filename="Tehnicar.hpp" />
 		<Unit filename="Tim.hpp" />
 		<Unit filename="Utakmica.hpp" />
+		<Unit filename="funkcije.hpp" />
 		<Unit filename="gradovi.txt" />
 		<Unit filename="main.cpp" />
 		<Extensions>
