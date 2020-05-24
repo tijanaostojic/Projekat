@@ -98,6 +98,10 @@ public:
         }
         return false;
     }
+
+    void setIgraci(vector<Igrac*> igr){
+        igraci=igr;
+    }
 };
 
 #endif // TIM_HPP_INCLUDED

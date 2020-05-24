@@ -26,7 +26,73 @@ void Blokiraj(SrednjiBloker &sb, Korektor &k){
         k.setBlokiran(1);
         //cout<< "Korektor: -1, srednji bloker +1" << endl;
     }
+vector<Igrac> getIgraciIzFajla(string nazivF)
+{
+    string linija;
+    int i=0;
+    ifstream fajl (nazivF);
+    vector<Igrac*> igraci;
+    vector<string> rezultat;
+    if (fajl.is_open())
+    {
+        while ( getline (fajl,linija) )
+        {
+            if (i==0)
+                continue;
+            cout<<linija<<endl;
+            rezultat = splitSen(linija);
+            tip = rezultat[3];
+            /// Tijana,Ostojic,16,S,45
 
+            if (tip=="L")
+            {
+                Libero* l = new Libero(rezultat[0], rezultat[1], stoi(rezultat[2]));
+                /// moze i l.setKorisnost(rezultat[4]);
+                igraci.push_back(l);
+            }
+            else if (tip=="K")
+            {
+                Korektor* k = new Korektor();
+                igraci.push_back(k);
+            }
+            /// ...
+
+            i++;
+        }
+        fajl.close();
+        return igraci;
+    }
+
+    else
+        cout << "Neuspesno otvoren fajl";
+
+}
+Tim getTimIzFajla(string nazivF)
+{
+
+    string linija;
+    int i=0;
+    ifstream fajl (nazivF);
+    vector<string> rezultat;
+    if (fajl.is_open())
+    {
+        while ( getline (fajl,linija) )
+        {
+            if (i==0){
+                rezultat = splitSen(linija);
+                /// Star,1,5,Goran,Kamasi
+                Tim t(rezultat[0], stoi(rezultat[1]),stoi(rezultat[2]),rezultat[3],rezultat[4] );
+                return t;
+            }
+
+            i++;
+        }
+        fajl.close();
+    }
+
+    else
+        cout << "Neuspesno otvoren fajl";
+}
 int main()
 {
     /*1. Program sluzi za pravljenje izvestaja o utakmicama: statistiku svakog igraca, rezultat...
@@ -79,6 +145,17 @@ int main()
     tim3.dodajIgraca(&k3);
 
 
+    Turnir t("Srbija, zenski");
+
+    for (int i=0; i<5; i++)
+    {
+
+        /// ucitaj igrace iz fajla
+        vector<Igrac*> igraci = getIgraciIzFajla("fajl"+i+".txt");
+        Tim t = getTimIzFajla("fajl"+i+".txt");
+        t.setIgraci(igraci);
+        turnir.addTim(t);
+    }
     Grad g1("Novi Sad", "Juznobacki", "Srbija", 350000);
     Grad g2("Beograd", "Grad Beograd", "Srbija", 1347000);
     Grad g3("Kikinda", "Severnobanatski", "Srbija", 40000);
@@ -90,6 +167,8 @@ int main()
     Utakmica u1(tim1, tim2, h1, 3, 2);
     Utakmica u2(tim1, tim3, h2, 3, 0);
     Utakmica u3(tim2, tim3, h3, 3, 1);
+    /// za sve igrace tima iz turnira t.getTimovi()
+    for();
     cout<<"Upisite korisnost igraca tima "<<tim1.getIme()<<":"<<endl;
     tim1.korisnostTima();
     cout<<endl;
@@ -101,24 +180,24 @@ int main()
     cout<<endl;
 
 
-    Libero* najboljiL(izaberiLibera(tim1, tim2, tim3));
+    Libero* najboljiL = new Libero (izaberiLibera(tim1, tim2, tim3));
     pisiTxt("najboljiigraci.txt", "Najbolji libero je: "+najboljiL->getIme()+" "+najboljiL->getPrezime()+"\n", 'w');
 
-    Primac* najboljiP(izaberiPrimaca(tim1, tim2, tim3));
+    Primac* najboljiP = Primac(izaberiPrimaca(tim1, tim2, tim3));
     pisiTxt("najboljiigraci.txt", "Najbolji primac je: "+najboljiP->getIme()+" "+najboljiP->getPrezime()+"\n", 'a');
 
-    Tehnicar* najboljiT(izaberiTehnicara(tim1, tim2, tim3));
+    Tehnicar* najboljiT = new Tehnicar(izaberiTehnicara(tim1, tim2, tim3));
     pisiTxt("najboljiigraci.txt", "Najbolji tehnicar je: "+najboljiT->getIme()+" "+najboljiT->getPrezime()+"\n", 'a');
 
-    SrednjiBloker* najboljiS(izaberisrednjaka(tim1, tim2, tim3));
+    SrednjiBloker* najboljiS = new SrednjiBloker(izaberisrednjaka(tim1, tim2, tim3));
     pisiTxt("najboljiigraci.txt", "Najbolji srednjak je: "+najboljiS->getIme()+" "+najboljiS->getPrezime()+"\n", 'a');
 
-    Korektor* najboljiK(izaberikorektora(tim1, tim2, tim3));
+    Korektor* najboljiK = new Korektor(izaberikorektora(tim1, tim2, tim3));
     pisiTxt("najboljiigraci.txt", "Najbolji korektor je: "+najboljiK->getIme()+" "+najboljiK->getPrezime()+"\n", 'a');
 
     citajTxt("najboljiigraci.txt");
     cout<<endl<<endl<<endl<<endl;
-    //meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);
+    meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);
 
 
 

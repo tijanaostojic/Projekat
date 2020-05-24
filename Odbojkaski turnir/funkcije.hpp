@@ -1,11 +1,6 @@
-#ifndef FUNKCIJE_HPP_INCLUDED
-#define FUNKCIJE_HPP_INCLUDED
-#include "KOREKTOR.HPP"
-#include "LIBERO.HPP"
-#include "PRIMAC.HPP"
-#include "SREDNJI_BLOKER.HPP"
 #include "TEHNICAR.HPP"
 #include "TIM.HPP"
+
 vector<string> splitSen(string str, char c=',')
 {
     string w = "";

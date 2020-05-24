@@ -48,6 +48,9 @@
 		<Unit filename="funkcije.hpp" />
 		<Unit filename="gradovi.txt" />
 		<Unit filename="main.cpp" />
+		<Unit filename="turnir.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

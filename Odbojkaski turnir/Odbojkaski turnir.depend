@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590178692 source:c:\projekat programiranje\projekat\odbojkaski turnir\main.cpp
+1590246532 source:c:\projekat programiranje\projekat\odbojkaski turnir\main.cpp
 	<iostream>
 	<fstream>
 	<string>
