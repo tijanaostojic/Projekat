@@ -123,7 +123,7 @@ int main()
 
     Turnir t("Srbija, zenski");
 
-    for (auto i=0; i<3; i++)
+    for (auto i=0; i<5; i++)
     {
         /// ucitaj igrace iz fajla
         vector <Igrac*> igraci = getIgraciIzFajla("fajl"+to_string(i)+".txt");

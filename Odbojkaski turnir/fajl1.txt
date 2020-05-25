@@ -1,6 +1,6 @@
 NS Volley Team,2,20,Ivona,Sobot
-Irina,Pokrajac,18,L,5
-Ira,Pantelic,16,P,8
-Sladjana,Petkovic,17,T,6
-Maja,Bjedov,17,S,7
-Marijana,Mudric,16,K,9
+Irina,Pokrajac,18,L,6
+Ira,Pantelic,16,P,7
+Sladjana,Petkovic,17,T,8
+Maja,Bjedov,17,S,9
+Marijana,Mudric,16,K,10

@@ -1,7 +1,7 @@
 Strand volley,3,40,Igor,Tesic
-Draga,Cirovic,17,L,45
-Lea,Keneski,16,P,50
-Jelena,Jankovic,16,T,100
-Tijana,Ostojic,17,S,17
-Lena,Kutanjac,16,K,9
+Draga,Cirovic,17,L,1
+Lea,Keneski,16,P,2
+Jelena,Jankovic,16,T,3
+Tijana,Ostojic,17,S,4
+Lena,Kutanjac,16,K,5
 

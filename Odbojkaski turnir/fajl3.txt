@@ -1,1 +1,8 @@
+Slavija,5,30,Olja,Grbic
+Milana,Milic,17,L,16
+Jugoslava,Jugoslavic,16,P,17
+Kosa,Kosic,12,T,18
+Natasa,Natasic,25,S,19
+Dunja,Dunjic,28,K,20
+
 
