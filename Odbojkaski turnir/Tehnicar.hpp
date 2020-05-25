@@ -9,6 +9,7 @@ protected:
     int PoenKuvanje;
     //int brojDizanja; dal ovo pisati
 public:
+    Tehnicar(){}
     Tehnicar(string i, string p, int g, dizanje D=lose, int PKuvanje=0, int dobroD=0, int loseD=0):Igrac(i, p ,g){
         Dizanje=D;
         PoenKuvanje=PKuvanje;
@@ -16,19 +17,16 @@ public:
 
     string getIme()const {return ime;}
     string getPrezime()const {return prezime;}
-
+    int getKorisnost()const{return korisnost;}
+    void setKorisnost(int korisnostt){
+        korisnost=korisnostt;
+    }
     Tehnicar(const Tehnicar &a):Igrac(a.ime, a.prezime, a.godine), Dizanje(a.Dizanje), PoenKuvanje(a.PoenKuvanje){}
 
-    void dizanje(SrednjiBloker &sb){
+    void dizanje(){
         PoenKuvanje++;
         korisnost++;
-        sb.setzastitaTehnicar(1);
-        cout << "Srednji bloker: -1" << endl << "Tehnicar: +1";
-    }
-
-    void setDizanje(int brojZastitaodLibera){
-        Dizanje=lose;
-        korisnost=0;
+        cout << "Tehnicar korisnost: +1"<<endl;
     }
     void predstaviSe(){
         Igrac::predstaviSe();

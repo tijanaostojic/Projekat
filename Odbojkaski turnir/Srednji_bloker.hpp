@@ -9,6 +9,7 @@ protected:
     int poenSmec;
     int zastitaTehnicar;
 public:
+    SrednjiBloker(){}
     SrednjiBloker(string i, string p, int g, int B=0, int PS=0):Igrac(i, p, g){
         Blokovi=B;
         poenSmec=PS;
@@ -16,20 +17,17 @@ public:
 
     string getIme()const {return ime;}
     string getPrezime()const{return prezime;}
-
+    int getKorisnost()const{return korisnost;}
+    void setKorisnost(int korisnostt){
+        korisnost=korisnostt;
+    }
     SrednjiBloker(const SrednjiBloker &a):Igrac(a.ime, a.prezime, a.godine), Blokovi(a.Blokovi), poenSmec(a.poenSmec), zastitaTehnicar(a.zastitaTehnicar){}
 
     void Blokiraj(){
         Blokovi++;
         korisnost++;
-        //k.setBlokiran(1);
-        cout<< "Korektor: -1, srednji bloker +1" << endl;
+        cout<< "Srednji bloker korisnost: +1" << endl;
     }
-    void setzastitaTehnicar(int kuvanje){
-        zastitaTehnicar-=kuvanje;
-        korisnost-=korisnost;
-    }
-
 
     void predstaviSe(){
         Igrac::predstaviSe();

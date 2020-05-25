@@ -32,7 +32,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../../../Users/Lenovo/Desktop/najboljiigraci.txt" />
 		<Unit filename="Godiste.hpp" />
 		<Unit filename="Grad.hpp" />
 		<Unit filename="Hala.hpp" />
@@ -45,6 +44,10 @@
 		<Unit filename="Tehnicar.hpp" />
 		<Unit filename="Tim.hpp" />
 		<Unit filename="Utakmica.hpp" />
+		<Unit filename="fajl0.txt" />
+		<Unit filename="fajl1.txt" />
+		<Unit filename="fajl2.txt" />
+		<Unit filename="fajl3.txt" />
 		<Unit filename="funkcije.hpp" />
 		<Unit filename="gradovi.txt" />
 		<Unit filename="main.cpp" />

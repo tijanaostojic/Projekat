@@ -16,48 +16,64 @@ using namespace std;
 #include "UTAKMICA.HPP"
 #include "HALA.HPP"
 #include "FUNKCIJE.HPP"
-
+#include "TURNIR.HPP"
 int Utakmica::brojUtakmica=0;
 
 
-void Blokiraj(SrednjiBloker &sb, Korektor &k){
-        sb.Blokiraj();
 
-        k.setBlokiran(1);
-        //cout<< "Korektor: -1, srednji bloker +1" << endl;
-    }
-vector<Igrac> getIgraciIzFajla(string nazivF)
+vector <Igrac*> getIgraciIzFajla(string nazivF)
 {
     string linija;
     int i=0;
     ifstream fajl (nazivF);
-    vector<Igrac*> igraci;
+    vector <Igrac*> igraci;
     vector<string> rezultat;
+    string tip;
     if (fajl.is_open())
     {
         while ( getline (fajl,linija) )
         {
-            if (i==0)
-                continue;
-            cout<<linija<<endl;
-            rezultat = splitSen(linija);
-            tip = rezultat[3];
-            /// Tijana,Ostojic,16,S,45
-
-            if (tip=="L")
+            if(linija=="")
+                break;
+            if (i>0)
             {
-                Libero* l = new Libero(rezultat[0], rezultat[1], stoi(rezultat[2]));
-                /// moze i l.setKorisnost(rezultat[4]);
-                igraci.push_back(l);
-            }
-            else if (tip=="K")
-            {
-                Korektor* k = new Korektor();
-                igraci.push_back(k);
-            }
-            /// ...
+                rezultat = splitSen(linija);
+                tip = rezultat[3];
+                /// Tijana,Ostojic,16,S,45
+                if (tip=="L")
+                {
+                    Libero* l = new Libero(rezultat[0], rezultat[1], stoi(rezultat[2]));
+                    l->setKorisnost(stoi(rezultat[4]));
+                    igraci.push_back(l);
 
+                }
+                else if (tip=="K")
+                {
+                    Korektor* k = new Korektor(rezultat[0], rezultat[1], stoi(rezultat[2]));
+                    k->setKorisnost(stoi(rezultat[4]));
+                    igraci.push_back(k);
+                }
+                else if (tip=="S")
+                {
+                    SrednjiBloker* s = new SrednjiBloker(rezultat[0], rezultat[1], stoi(rezultat[2]));
+                    s->setKorisnost(stoi(rezultat[4]));
+                    igraci.push_back(s);
+                }
+                else if (tip=="P")
+                {
+                    Primac* p = new Primac(rezultat[0], rezultat[1], stoi(rezultat[2]));
+                    p->setKorisnost(stoi(rezultat[4]));
+                    igraci.push_back(p);
+                }
+                else if (tip=="T")
+                {
+                    Tehnicar* t = new Tehnicar(rezultat[0], rezultat[1], stoi(rezultat[2]));
+                    t->setKorisnost(stoi(rezultat[4]));
+                    igraci.push_back(t);
+                }
+            }
             i++;
+
         }
         fajl.close();
         return igraci;
@@ -67,29 +83,22 @@ vector<Igrac> getIgraciIzFajla(string nazivF)
         cout << "Neuspesno otvoren fajl";
 
 }
-Tim getTimIzFajla(string nazivF)
+Tim* getTimIzFajla(string nazivF)
 {
 
     string linija;
-    int i=0;
     ifstream fajl (nazivF);
     vector<string> rezultat;
     if (fajl.is_open())
     {
-        while ( getline (fajl,linija) )
-        {
-            if (i==0){
-                rezultat = splitSen(linija);
-                /// Star,1,5,Goran,Kamasi
-                Tim t(rezultat[0], stoi(rezultat[1]),stoi(rezultat[2]),rezultat[3],rezultat[4] );
-                return t;
-            }
+        getline (fajl,linija);
 
-            i++;
-        }
+        rezultat = splitSen(linija);
+        /// Star,1,5,Goran,Kamasi
+        Tim* t= new Tim(rezultat[0], stoi(rezultat[1]),stoi(rezultat[2]),rezultat[3],rezultat[4] );
         fajl.close();
+        return t;
     }
-
     else
         cout << "Neuspesno otvoren fajl";
 }
@@ -104,58 +113,6 @@ int main()
     cout<<"==============================="<<endl;
     cout<<"-------ODBOJKASKI TURNIR-------"<<endl;
     cout<<"==============================="<<endl;
-
-    Libero l1("Draga", "Cirovic", 17);
-    Primac p1("Lea", "Keneski", 16);
-    Tehnicar t1("Jelena", "Jankovic", 16);
-    SrednjiBloker sb1("Tijana", "Ostojic", 17);
-    Korektor k1("Lena", "Kutanjac", 16);
-
-    Tim tim1("Strand volley", 3, 40, "Igor", "Tesic");
-    tim1.dodajIgraca(&l1);
-    tim1.dodajIgraca(&p1);
-    tim1.dodajIgraca(&t1);
-    tim1.dodajIgraca(&sb1);
-    tim1.dodajIgraca(&k1);
-
-    Libero l2("Irina", "Pokrajac", 18);
-    Primac p2("Ira", "Pantelic", 16);
-    Tehnicar t2("Sladjana", "Petkovic", 17);
-    SrednjiBloker sb2("Maja", "Bjedov", 17);
-    Korektor k2("Masa", "Mudric", 16);
-
-    Tim tim2("NS Volley Team", 2, 20, "Ivona", "Sobot");
-    tim2.dodajIgraca(&l2);
-    tim2.dodajIgraca(&p2);
-    tim2.dodajIgraca(&t2);
-    tim2.dodajIgraca(&sb2);
-    tim2.dodajIgraca(&k2);
-
-    Libero l3("Vanja", "Vucurovic", 21);
-    Primac p3("Milica", "Joldic", 15);
-    Tehnicar t3("Bojana", "Balaban", 18);
-    SrednjiBloker sb3("Bojana", "Knezevic", 16);
-    Korektor k3("Andjela", "Bjelic", 17);
-
-    Tim tim3("Star", 1, 5, "Goran", "Kamasi");
-    tim3.dodajIgraca(&l3);
-    tim3.dodajIgraca(&p3);
-    tim3.dodajIgraca(&t3);
-    tim3.dodajIgraca(&sb3);
-    tim3.dodajIgraca(&k3);
-
-
-    Turnir t("Srbija, zenski");
-
-    for (int i=0; i<5; i++)
-    {
-
-        /// ucitaj igrace iz fajla
-        vector<Igrac*> igraci = getIgraciIzFajla("fajl"+i+".txt");
-        Tim t = getTimIzFajla("fajl"+i+".txt");
-        t.setIgraci(igraci);
-        turnir.addTim(t);
-    }
     Grad g1("Novi Sad", "Juznobacki", "Srbija", 350000);
     Grad g2("Beograd", "Grad Beograd", "Srbija", 1347000);
     Grad g3("Kikinda", "Severnobanatski", "Srbija", 40000);
@@ -164,40 +121,40 @@ int main()
     Hala h3("Kikinda", "Severnobanatski", "Srbija", 40000, 1, 50);
     Hala h4("Loznica", "Macvanski", "Srbija", 85000, 1, 100);
 
-    Utakmica u1(tim1, tim2, h1, 3, 2);
-    Utakmica u2(tim1, tim3, h2, 3, 0);
-    Utakmica u3(tim2, tim3, h3, 3, 1);
-    /// za sve igrace tima iz turnira t.getTimovi()
-    for();
-    cout<<"Upisite korisnost igraca tima "<<tim1.getIme()<<":"<<endl;
-    tim1.korisnostTima();
-    cout<<endl;
-    cout<<"Upisite korisnost igraca tima "<<tim2.getIme()<<":"<<endl;
-    tim2.korisnostTima();
-    cout<<endl;
-    cout<<"Upisite korisnost igraca tima "<<tim3.getIme()<<":"<<endl;
-    tim3.korisnostTima();
-    cout<<endl;
+    Turnir t("Srbija, zenski");
 
-
-    Libero* najboljiL = new Libero (izaberiLibera(tim1, tim2, tim3));
+    for (auto i=0; i<3; i++)
+    {
+        /// ucitaj igrace iz fajla
+        vector <Igrac*> igraci = getIgraciIzFajla("fajl"+to_string(i)+".txt");
+        Tim* team =  new Tim();
+        team = getTimIzFajla("fajl"+to_string(i)+".txt");
+        team->setIgraci(igraci);
+        t.addTim(team);
+    }
+    Libero* najboljiL = new Libero();
+    najboljiL = izaberiLibera(t);
     pisiTxt("najboljiigraci.txt", "Najbolji libero je: "+najboljiL->getIme()+" "+najboljiL->getPrezime()+"\n", 'w');
 
-    Primac* najboljiP = Primac(izaberiPrimaca(tim1, tim2, tim3));
+    Primac* najboljiP = new Primac();
+    najboljiP = izaberiPrimaca(t);
     pisiTxt("najboljiigraci.txt", "Najbolji primac je: "+najboljiP->getIme()+" "+najboljiP->getPrezime()+"\n", 'a');
 
-    Tehnicar* najboljiT = new Tehnicar(izaberiTehnicara(tim1, tim2, tim3));
+    Tehnicar* najboljiT = new Tehnicar();
+    najboljiT = izaberiTehnicara(t);
     pisiTxt("najboljiigraci.txt", "Najbolji tehnicar je: "+najboljiT->getIme()+" "+najboljiT->getPrezime()+"\n", 'a');
 
-    SrednjiBloker* najboljiS = new SrednjiBloker(izaberisrednjaka(tim1, tim2, tim3));
+    SrednjiBloker* najboljiS = new SrednjiBloker();
+    najboljiS = izaberisrednjaka(t);
     pisiTxt("najboljiigraci.txt", "Najbolji srednjak je: "+najboljiS->getIme()+" "+najboljiS->getPrezime()+"\n", 'a');
 
-    Korektor* najboljiK = new Korektor(izaberikorektora(tim1, tim2, tim3));
+    Korektor* najboljiK = new Korektor();
+    najboljiK = izaberikorektora(t);
     pisiTxt("najboljiigraci.txt", "Najbolji korektor je: "+najboljiK->getIme()+" "+najboljiK->getPrezime()+"\n", 'a');
 
     citajTxt("najboljiigraci.txt");
     cout<<endl<<endl<<endl<<endl;
-    meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);
+    //meni(h1, h2, h3, h4, g1, g2, g3, tim1, tim2, tim3);*/
 
 
 

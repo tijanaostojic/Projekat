@@ -4,10 +4,16 @@
 class Turnir{
 private:
     string naziv;
-    vector<Tim> sviTimovi;
-
+    vector<Tim*> sviTimovi;
 public:
-/// pushbackuj timove
+    Turnir(string ime){
+        naziv=ime;
+    }
+    void addTim(Tim *t){
+        sviTimovi.push_back(t);
+    }
+    vector<Tim*> getTimovi()const{return sviTimovi;}
+    ~Turnir(){sviTimovi.clear();}
 };
 
 

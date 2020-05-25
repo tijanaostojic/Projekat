@@ -9,28 +9,27 @@ protected:
     int Odbrana;
     int Zastita;
 public:
+    Libero(){}
     Libero(string i, string p, int g, int pr=0, int o=0, int z=0):Igrac(i, p, g){
         Prijem=pr;
         Odbrana=o;
         Zastita=z;
     }
-
     string getIme()const {return ime;}
     string getPrezime()const {return prezime;}
-
+    int getGodine()const{return godine;}
+    int getKorisnost()const{return korisnost;}
+    void setKorisnost(int korisnostt){
+        korisnost=korisnostt;
+    }
     Libero(const Libero &a):Igrac(a.ime, a.prezime, a.godine),Prijem(a.Prijem), Odbrana(a.Odbrana), Zastita(a.Zastita){}
-
-    void dobraZastita(Tehnicar &t){
+    void dobraZastita(){
         Zastita++;
         korisnost++;
-        t.setDizanje(1);
-        cout<<"Libero +1, tehnicar -1"<<endl;
+        cout<<"Libero korisnost: +1"<<endl;
     }
 
-    void setdobroDodavanje(int brojDobrihDodavanja){
-        Odbrana+=brojDobrihDodavanja;
-        korisnost-=korisnost;
-    }
+
 
     void predstaviSe(){
         Igrac::predstaviSe();

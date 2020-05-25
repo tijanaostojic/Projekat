@@ -18,6 +18,7 @@ public:
 
     string getIme()const {return ime;}
     string getPrezime()const {return prezime;}
+    int getGodine()const{return godine;}
     int getKorisnost()const{return korisnost;}
     void setKorisnost(int korisnostt){
         korisnost=korisnostt;

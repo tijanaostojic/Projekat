@@ -9,6 +9,7 @@ protected:
     int PoenServis;
     int Blokiran;
 public:
+    Korektor(){}
     Korektor(string i, string p,int g, int PSmec=0, int PServis=0, int Blok=0):Igrac(i, p, g){
         PoenSmec=PSmec;
         PoenServis=PServis;
@@ -18,18 +19,16 @@ public:
 
     string getIme()const{return ime;}
     string getPrezime()const {return prezime;}
-
-    void PoentirajSmeck(Primac &p){
+    int getKorisnost()const{return korisnost;}
+    void setKorisnost(int korisnostt){
+        korisnost=korisnostt;
+    }
+    void PoentirajSmeck(){
         PoenSmec++;
         korisnost++;
-        p.setLosaOdbrana(1);
-        cout<<"Korektor +1, primac -1"<<endl;
+        cout<<"Korektor korisnost: +1"<<endl;
     }
 
-    void setBlokiran(int brojBlokiran){
-        Blokiran+=brojBlokiran;
-        korisnost-=korisnost;
-    }
 
 
     void predstaviSe(){

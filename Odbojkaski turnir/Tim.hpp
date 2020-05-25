@@ -15,6 +15,7 @@ protected:
     string prezimeTrenera;
     vector <Igrac*> igraci;
 public:
+    Tim(){}
     Tim(string i, int brE, int brI, string imeT, string prezimeT)
     {
         Ime=i;
@@ -102,6 +103,7 @@ public:
     void setIgraci(vector<Igrac*> igr){
         igraci=igr;
     }
+    ~Tim(){igraci.clear();}
 };
 
 #endif // TIM_HPP_INCLUDED
